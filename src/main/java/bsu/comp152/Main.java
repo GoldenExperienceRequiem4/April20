@@ -7,16 +7,16 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 
 
 public class Main extends Application {
+
 
     private TextField promptTextField;
 
@@ -29,7 +29,9 @@ public class Main extends Application {
         promptTextField = new TextField();
         Button clickButton = new Button("Click");
         clickButton.setOnAction(new ClickButtonHandler());
-        HBox hbox = new HBox(10, promptLabel, promptTextField);
-        
+        VBox vbox = new VBox(10,promptLabel, clickButton);
+        Scene scene = new Scene(vbox, 300, 300);
+
+
     }
 }
